@@ -38,7 +38,6 @@ class ExactAlgorithm:
         # 1. Fill with ones
         self.fill_sudoku_with_ones()
 
-
         while True:
 
             # reset indexes
