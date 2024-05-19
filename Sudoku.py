@@ -38,7 +38,13 @@ class Sudoku:
             self.board[i][j] = Cell(k, is_perm=True)
 
     def is_valid(self) -> bool:
-        return self.count_mistakes() == 0
+        if self.__count_mistakes_in_rows(only_validation=True) == -1:
+            return False
+        if self.__count_mistakes_in_columns(only_validation=True) == -1:
+            return False
+        if self.__count_mistakes_in_squares(only_validation=True) == -1:
+            return False
+        return True
 
     def count_mistakes(self) -> int:
         count_mistakes_rows = self.__count_mistakes_in_rows()
@@ -46,28 +52,32 @@ class Sudoku:
         count_mistakes_squares = self.__count_mistakes_in_squares()
         return count_mistakes_rows + count_mistakes_cols + count_mistakes_squares
 
-    def __count_mistakes_in_rows(self) -> int:
+    def __count_mistakes_in_rows(self, only_validation=False) -> int:
         mistake_count = 0
         for row in self.board:
             values_seen = set()
             for cell in row:
                 if cell.value in values_seen:
+                    if only_validation:
+                        return -1
                     mistake_count += 1
                 values_seen.add(cell.value)
         return mistake_count
 
-    def __count_mistakes_in_columns(self) -> int:
+    def __count_mistakes_in_columns(self, only_validation=False) -> int:
         mistake_count = 0
         for col_index in range(9):
             values_seen = set()
             for row_index in range(9):
                 value = self.board[row_index][col_index].value
                 if value in values_seen:
+                    if only_validation:
+                        return -1
                     mistake_count += 1
                 values_seen.add(value)
         return mistake_count
 
-    def __count_mistakes_in_squares(self) -> int:
+    def __count_mistakes_in_squares(self, only_validation=False) -> int:
         mistake_count = 0
         for start_row in range(0, 9, 3):
             for start_col in range(0, 9, 3):
@@ -76,6 +86,16 @@ class Sudoku:
                     for j in range(3):
                         cell = self.board[start_row + i][start_col + j]
                         if cell.value in values_seen:
+                            if only_validation:
+                                return -1
                             mistake_count += 1
                         values_seen.add(cell.value)
         return mistake_count
+
+    def display(self):
+        print("Sudoku:")
+        for row in self.board:
+            for cell in row:
+                print(cell.value, end=" ")
+            print()
+        print("Sudoku end")

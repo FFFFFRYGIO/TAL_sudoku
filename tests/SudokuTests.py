@@ -7,13 +7,21 @@ class SudokuTests(unittest.TestCase):
         self.init_cells = INIT_CELLS
         self.good_solution = GOOD_SOLUTION
 
-    def test_sudoku_good_solution(self):
+    def test_sudoku_good_solution_count_mistakes(self):
         sudoku = Sudoku(self.init_cells)
 
         for i, j, k in self.good_solution:
-            sudoku.board[i][j] = Cell(k)
+            sudoku.board[i][j].value = k
 
         assert sudoku.count_mistakes() == 0
+
+    def test_sudoku_good_solution_is_valid(self):
+        sudoku = Sudoku(self.init_cells)
+
+        for i, j, k in self.good_solution:
+            sudoku.board[i][j].value = k
+
+        assert sudoku.is_valid()
 
 
 if __name__ == '__main__':
