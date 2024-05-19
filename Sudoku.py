@@ -98,4 +98,3 @@ class Sudoku:
             for cell in row:
                 print(cell.value, end=" ")
             print()
-        print("Sudoku end")

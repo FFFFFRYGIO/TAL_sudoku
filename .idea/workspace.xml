@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="rename SudokuTests.py">
-      <change afterPath="$PROJECT_DIR$/tests/ExactAlgorithmTests.py" afterDir="false" />
+    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="cosmetic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sudoku.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exact_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/exact_algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/SudokuTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/SudokuTests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +36,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.executor": "Debug",
-    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm.executor": "Debug",
+    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.executor": "Run",
+    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm.executor": "Run",
     "Python tests.Python tests for SudokuTest.SudokuTest.executor": "Run",
     "Python tests.Python tests for SudokuTests.SudokuTests.executor": "Run",
     "Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes.executor": "Run",
@@ -64,7 +61,7 @@
       <recent name="C:\Users\radek\PycharmProjects\TAL_sudoku\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm">
+  <component name="RunManager" selected="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests">
     <configuration name="Python tests for ExactAlgorithmTests.ExactAlgorithmTests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="TAL_sudoku" />
       <option name="ENV_FILES" value="" />
@@ -147,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests" />
+        <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests" />
         <item itemvalue="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm" />
         <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid" />
-        <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests" />
         <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes" />
-        <item itemvalue="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +169,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716139043243</updated>
       <workItem from="1716139043244" duration="3881000" />
-      <workItem from="1716142976338" duration="4595000" />
+      <workItem from="1716142976338" duration="11385000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <option name="closed" value="true" />
@@ -198,7 +195,31 @@
       <option name="project" value="LOCAL" />
       <updated>1716143238129</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="exact algorithm test and implementation, updates">
+      <option name="closed" value="true" />
+      <created>1716147714373</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716147714373</updated>
+    </task>
+    <task id="LOCAL-00005" summary="cosmetic">
+      <option name="closed" value="true" />
+      <created>1716147741235</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716147741235</updated>
+    </task>
+    <task id="LOCAL-00006" summary="cosmetic">
+      <option name="closed" value="true" />
+      <created>1716147766980</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716147766980</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,11 +229,13 @@
     <MESSAGE value="Initial" />
     <MESSAGE value="Sudoku, SudokuTest" />
     <MESSAGE value="rename SudokuTests.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename SudokuTests.py" />
+    <MESSAGE value="exact algorithm test and implementation, updates" />
+    <MESSAGE value="cosmetic" />
+    <option name="LAST_COMMIT_MESSAGE" value="cosmetic" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TAL_sudoku$sudoku.coverage" NAME="sudoku Coverage Results" MODIFIED="1716141932465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$test.coverage" NAME="test Coverage Results" MODIFIED="1716142096261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TAL_sudoku$.coverage" NAME=" Coverage Results" MODIFIED="1716147616958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/TAL_sudoku$.coverage" NAME=" Coverage Results" MODIFIED="1716148863622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>
