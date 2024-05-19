@@ -2,7 +2,7 @@ import unittest
 from Sudoku import Sudoku, Cell, INIT_CELLS, GOOD_SOLUTION
 
 
-class SudokuTest(unittest.TestCase):
+class SudokuTests(unittest.TestCase):
     def setUp(self):
         self.init_cells = INIT_CELLS
         self.good_solution = GOOD_SOLUTION
