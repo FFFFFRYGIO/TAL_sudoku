@@ -61,7 +61,9 @@ class ExactAlgorithm:
                     go_to_next_cell = False
 
                 if self.sudoku.board[self.i_index][self.j_index].value != 9:
+                    # on tu iteruje wszystkie do 9, ale nie resetuje wartości!!!!
                     self.sudoku.board[self.i_index][self.j_index].value += 1
                     found_cell_not_equal_nine = True
                 else:
+                    self.sudoku.board[self.i_index][self.j_index].value = 1
                     go_to_next_cell = True
