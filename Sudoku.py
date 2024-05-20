@@ -33,7 +33,12 @@ class Cell:
         self.__value = value
         self.is_perm = is_perm
 
-    def set_value(self, value: int):
+    @property
+    def value(self) -> int:
+        return self.__value
+
+    @value.setter
+    def value(self, value: int):
         if value not in self.values_allowed:
             raise ValueError(f'value {value} is not allowed')
         self.__value = value
