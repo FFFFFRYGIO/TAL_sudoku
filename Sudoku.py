@@ -1,12 +1,11 @@
 from typing import List, Tuple
 
-
 INIT_CELLS = [
     (0, 0, 5), (0, 1, 3), (0, 4, 7),
     (1, 0, 6), (1, 3, 1), (1, 4, 9), (1, 5, 5),
     (2, 1, 9), (2, 2, 8), (2, 7, 6),
     (3, 0, 8), (3, 4, 6), (3, 8, 3),
-    (4, 0, 4), (4, 3, 8), (4, 5, 3), (4, 8, 1),
+    (4, 0, 4), (4, 3, 8), (4, 4, 5), (4, 5, 3), (4, 8, 1),
     (5, 0, 7), (5, 4, 2), (5, 8, 6),
     (6, 1, 6), (6, 6, 2), (6, 7, 8),
     (7, 3, 4), (7, 4, 1), (7, 5, 9), (7, 8, 5),
@@ -26,9 +25,18 @@ GOOD_SOLUTION = [
 
 
 class Cell:
+    values_allowed = range(1, 10)
+
     def __init__(self, value: int, is_perm: bool = False):
-        self.value = value
+        if value not in self.values_allowed:
+            raise ValueError(f'value {value} is not allowed')
+        self.__value = value
         self.is_perm = is_perm
+
+    def set_value(self, value: int):
+        if value not in self.values_allowed:
+            raise ValueError(f'value {value} is not allowed')
+        self.__value = value
 
 
 class Sudoku:
@@ -57,11 +65,11 @@ class Sudoku:
         for row in self.board:
             values_seen = set()
             for cell in row:
-                if cell.value in values_seen:
+                if cell.__value in values_seen:
                     if only_validation:
                         return -1
                     mistake_count += 1
-                values_seen.add(cell.value)
+                values_seen.add(cell.__value)
         return mistake_count
 
     def __count_mistakes_in_columns(self, only_validation=False) -> int:
@@ -69,7 +77,7 @@ class Sudoku:
         for col_index in range(9):
             values_seen = set()
             for row_index in range(9):
-                value = self.board[row_index][col_index].value
+                value = self.board[row_index][col_index].__value
                 if value in values_seen:
                     if only_validation:
                         return -1
@@ -85,16 +93,16 @@ class Sudoku:
                 for i in range(3):
                     for j in range(3):
                         cell = self.board[start_row + i][start_col + j]
-                        if cell.value in values_seen:
+                        if cell.__value in values_seen:
                             if only_validation:
                                 return -1
                             mistake_count += 1
-                        values_seen.add(cell.value)
+                        values_seen.add(cell.__value)
         return mistake_count
 
     def display(self):
         print("Sudoku:")
         for row in self.board:
             for cell in row:
-                print(cell.value, end=" ")
+                print(cell.__value, end=" ")
             print()
