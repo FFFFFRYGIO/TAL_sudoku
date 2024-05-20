@@ -13,9 +13,9 @@ class ExactAlgorithmTests(unittest.TestCase):
 
         exact_algorithm = ExactAlgorithm(sudoku)
 
-        result = exact_algorithm.exact_algorithm()
+        result_sudoku = exact_algorithm.exact_algorithm()
 
-        assert exact_algorithm.sudoku.count_mistakes() == 0
+        assert result_sudoku.count_mistakes() == 0
 
 
 if __name__ == '__main__':
