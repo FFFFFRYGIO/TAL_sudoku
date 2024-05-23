@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="cosmetics">
+    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="replace value reference to getter">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exact_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/exact_algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/SudokuTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/SudokuTests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,34 +35,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.executor": "Run",
-    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm.executor": "Run",
-    "Python tests.Python tests for SudokuTest.SudokuTest.executor": "Run",
-    "Python tests.Python tests for SudokuTests.SudokuTests.executor": "Run",
-    "Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes.executor": "Run",
-    "Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid.executor": "Run",
-    "Python tests.Python tests in tests.executor": "Run",
-    "Python.sudoku.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for SudokuTest.SudokuTest.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for SudokuTests.SudokuTests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sudoku.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\radek\PycharmProjects\TAL_sudoku" />
       <recent name="C:\Users\radek\PycharmProjects\TAL_sudoku\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests">
+  <component name="RunManager" selected="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm">
     <configuration name="Python tests for ExactAlgorithmTests.ExactAlgorithmTests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="TAL_sudoku" />
       <option name="ENV_FILES" value="" />
@@ -143,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm" />
+        <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes" />
         <item itemvalue="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests" />
         <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests" />
-        <item itemvalue="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm" />
         <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid" />
-        <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes" />
       </list>
     </recent_temporary>
   </component>
@@ -169,6 +171,9 @@
       <updated>1716139043243</updated>
       <workItem from="1716139043244" duration="3881000" />
       <workItem from="1716142976338" duration="11605000" />
+      <workItem from="1716203225162" duration="6262000" />
+      <workItem from="1716219849952" duration="1297000" />
+      <workItem from="1716377233123" duration="131000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <option name="closed" value="true" />
@@ -234,7 +239,39 @@
       <option name="project" value="LOCAL" />
       <updated>1716157123765</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test returned sudoku in test_exact_algorithm">
+      <option name="closed" value="true" />
+      <created>1716203291378</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716203291378</updated>
+    </task>
+    <task id="LOCAL-00010" summary="cells verification">
+      <option name="closed" value="true" />
+      <created>1716208366453</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716208366453</updated>
+    </task>
+    <task id="LOCAL-00011" summary="cell setter and getter">
+      <option name="closed" value="true" />
+      <created>1716208653012</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716208653012</updated>
+    </task>
+    <task id="LOCAL-00012" summary="replace value reference to getter">
+      <option name="closed" value="true" />
+      <created>1716219906794</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716219906794</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,11 +285,15 @@
     <MESSAGE value="cosmetic" />
     <MESSAGE value="fix incrementing values in board" />
     <MESSAGE value="cosmetics" />
-    <option name="LAST_COMMIT_MESSAGE" value="cosmetics" />
+    <MESSAGE value="test returned sudoku in test_exact_algorithm" />
+    <MESSAGE value="cells verification" />
+    <MESSAGE value="cell setter and getter" />
+    <MESSAGE value="replace value reference to getter" />
+    <option name="LAST_COMMIT_MESSAGE" value="replace value reference to getter" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TAL_sudoku$sudoku.coverage" NAME="sudoku Coverage Results" MODIFIED="1716141932465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$test.coverage" NAME="test Coverage Results" MODIFIED="1716142096261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TAL_sudoku$.coverage" NAME=" Coverage Results" MODIFIED="1716156994806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/TAL_sudoku$.coverage" NAME=" Coverage Results" MODIFIED="1716204109794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

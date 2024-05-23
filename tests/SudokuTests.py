@@ -1,27 +1,29 @@
 import unittest
-from Sudoku import Sudoku, Cell, INIT_CELLS, GOOD_SOLUTION
+
+from parameterized import parameterized
+
+from Sudoku import Sudoku, GOOD_SOLUTION, get_random_sudoku
 
 
 class SudokuTests(unittest.TestCase):
     def setUp(self):
-        self.init_cells = INIT_CELLS
-        self.good_solution = GOOD_SOLUTION
+        self.good_solution = GOOD_SOLUTION.copy()
 
     def test_sudoku_good_solution_count_mistakes(self):
-        sudoku = Sudoku(self.init_cells)
+        sudoku = get_random_sudoku(10, self.good_solution)
 
-        for i, j, k in self.good_solution:
-            sudoku.board[i][j].value = k
+        for i, j, value in self.good_solution:
+            sudoku.board[i][j] = value
 
-        assert sudoku.count_mistakes() == 0
+        self.assertEqual(sudoku.count_mistakes(), 0)
 
     def test_sudoku_good_solution_is_valid(self):
-        sudoku = Sudoku(self.init_cells)
+        sudoku = Sudoku(self.good_solution)
 
-        for i, j, k in self.good_solution:
-            sudoku.board[i][j].value = k
+        for i, j, value in self.good_solution:
+            sudoku.board[i][j] = value
 
-        assert sudoku.is_valid()
+        self.assertTrue(sudoku.is_valid())
 
 
 if __name__ == '__main__':
