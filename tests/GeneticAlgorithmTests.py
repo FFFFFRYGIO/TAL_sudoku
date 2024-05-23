@@ -1,7 +1,7 @@
 import unittest
 
 from Sudoku import get_random_sudoku
-from genetic_algorithm import GenericAlgorithm
+from genetic_algorithm import GeneticAlgorithm
 from good_solution_source import get_good_solution
 
 
@@ -12,7 +12,7 @@ class GeneticAlgorithmTests(unittest.TestCase):
     def test_genetic_algorithm(self):
         sudoku = get_random_sudoku(10, self.good_solution)
 
-        genetic_algorithm = GenericAlgorithm(sudoku, population_number=10)
+        genetic_algorithm = GeneticAlgorithm(sudoku, population_number=10)
 
         result_sudoku = genetic_algorithm.genetic_algorithm()
 

@@ -4,7 +4,7 @@ from random import randint, shuffle, choice
 from Sudoku import Sudoku
 
 
-class GenericAlgorithm:
+class GeneticAlgorithm:
     def __init__(self, sudoku_to_solve: Sudoku, population_number=10):
         self.sudoku_to_solve = copy.deepcopy(sudoku_to_solve)
         self.population_number = population_number
