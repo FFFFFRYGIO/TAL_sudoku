@@ -1,13 +1,12 @@
 import unittest
 
-from parameterized import parameterized
-
-from Sudoku import Sudoku, GOOD_SOLUTION, get_random_sudoku
+from Sudoku import Sudoku, get_random_sudoku
+from good_solution_source import get_good_solution
 
 
 class SudokuTests(unittest.TestCase):
     def setUp(self):
-        self.good_solution = GOOD_SOLUTION.copy()
+        self.good_solution = get_good_solution()
 
     def test_sudoku_good_solution_count_mistakes(self):
         sudoku = get_random_sudoku(10, self.good_solution)
