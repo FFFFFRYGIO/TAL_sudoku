@@ -11,7 +11,7 @@ class ExactAlgorithmTests(unittest.TestCase):
     def test_genetic_algorithm(self):
         sudoku = get_random_sudoku(5, self.good_solution)
 
-        genetic_algorithm = GenericAlgorithm(sudoku, number_of_population=10)
+        genetic_algorithm = GenericAlgorithm(sudoku, first_population_number=10, max_population_number=10)
 
         result_sudoku = genetic_algorithm.genetic_algorithm()
 
