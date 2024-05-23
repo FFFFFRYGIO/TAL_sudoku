@@ -92,8 +92,8 @@ class Sudoku:
 
 def get_random_sudoku(num_of_empty_cells: int, good_solution) -> Sudoku:
     min_possible_clues = 17
-    if num_of_empty_cells > 9 * 9 - min_possible_clues:
-        raise ValueError(f"Number of empty cells {num_of_empty_cells} requested exceeds the number of cells available")
+    if not num_of_empty_cells or num_of_empty_cells > 9 * 9 - min_possible_clues:
+        raise ValueError(f"Wrong number of empty cells: {num_of_empty_cells}")
 
     init_cells = good_solution.copy()
     for _ in range(num_of_empty_cells):
