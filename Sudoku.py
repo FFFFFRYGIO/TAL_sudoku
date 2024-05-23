@@ -18,7 +18,7 @@ class Sudoku:
     def mark_solution(self):
         if not self.is_solved():
             raise ValueError('Sudoku is not solved yet')
-        self.mark = 1 / self.count_mistakes()
+        self.mark = self.count_mistakes()
 
     def is_solved(self) -> bool:
         return all(self.board[i][j] in range(1, 10) for i in range(9) for j in range(9))
