@@ -10,9 +10,9 @@ class GeneticAlgorithmTests(unittest.TestCase):
         self.good_solution = get_good_solution()
 
     def test_genetic_algorithm(self):
-        sudoku = get_random_sudoku(5, self.good_solution)
+        sudoku = get_random_sudoku(10, self.good_solution)
 
-        genetic_algorithm = GenericAlgorithm(sudoku, first_population_number=10, max_population_number=10)
+        genetic_algorithm = GenericAlgorithm(sudoku, population_number=10)
 
         result_sudoku = genetic_algorithm.genetic_algorithm()
 
