@@ -13,7 +13,7 @@ class GeneticAlgorithmTests(unittest.TestCase):
     def setUp(self):
         self.good_solution = get_good_solution()
 
-    @data(*product(range(10, 11), [5, 10, 20]))
+    @data(*product(range(1, 5), [5, 10, 20]))
     @unpack
     def test_genetic_algorithm(self, num_of_empty_cells=5, population_number=10):
         sudoku = get_random_sudoku(num_of_empty_cells, self.good_solution)
