@@ -4,7 +4,8 @@ from Sudoku import get_random_sudoku
 from genetic_algorithm import GenericAlgorithm
 from good_solution_source import get_good_solution
 
-class ExactAlgorithmTests(unittest.TestCase):
+
+class GeneticAlgorithmTests(unittest.TestCase):
     def setUp(self):
         self.good_solution = get_good_solution()
 
