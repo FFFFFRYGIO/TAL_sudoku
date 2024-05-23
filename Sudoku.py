@@ -13,6 +13,13 @@ class Sudoku:
             self.board[i][j] = value
             self.non_perm_cells_list.remove((i, j))
 
+        self.mark = None
+
+    def mark_solution(self):
+        if not self.is_solved():
+            raise ValueError('Sudoku is not solved yet')
+        self.mark = 1 / self.count_mistakes()
+
     def is_solved(self) -> bool:
         return all(self.board[i][j] in range(1, 10) for i in range(9) for j in range(9))
 
