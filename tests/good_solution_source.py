@@ -13,8 +13,8 @@ GOOD_SOLUTION = [
 ]
 
 
-def save_good_solution(solution=GOOD_SOLUTION):
-    with open('good_solution.txt', 'w') as f:
+def save_good_solution(file_name='good_solution.txt', solution=GOOD_SOLUTION):
+    with open(file_name, 'w') as f:
         prev_row = solution[0][0]
         for i, j, value in solution:
             if prev_row != i:
@@ -22,14 +22,21 @@ def save_good_solution(solution=GOOD_SOLUTION):
             f.write(f"{i} {j} {value}\t")
 
 
-def get_good_solution():
+def get_good_solution(file_name='good_solution.txt'):
     good_solution = []
-    with open('good_solution.txt', 'r') as f:
+    with open(file_name, 'r') as f:
         for line in f:
             for part in line.strip().split('\t'):
                 i, j, value = map(int, part.split())
                 good_solution.append((i, j, value))
     return good_solution
+
+
+def get_solutions(solutions_file_list):
+    good_solutions = []
+    for good_solution_file in solutions_file_list:
+        good_solutions.append(get_good_solution(good_solution_file))
+    return good_solutions
 
 
 if __name__ == '__main__':
