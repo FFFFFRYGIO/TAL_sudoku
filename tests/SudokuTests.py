@@ -1,7 +1,7 @@
 import unittest
 
 from Sudoku import Sudoku, get_random_sudoku
-from good_solution_source import get_good_solution
+from source_manager import get_good_solution
 
 
 class SudokuTests(unittest.TestCase):

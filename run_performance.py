@@ -8,7 +8,7 @@ from openpyxl.chart import LineChart, Reference
 from Sudoku import get_random_sudoku
 from exact_algorithm import ExactAlgorithm
 from genetic_algorithm import GeneticAlgorithm
-from good_solution_source import get_solutions
+from source_manager import get_solutions
 
 
 class PerformanceRunner:
