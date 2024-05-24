@@ -25,7 +25,6 @@ class PerformanceRunner:
             self.results.update({f'exact_{n}': []})
             self.results.update({f'genetic_{p}_{n}': [] for p in self.genetic_algorithm_population_numbers})
 
-
     @staticmethod
     def run_exact_algorithm_performance(good_solution, num_of_empty_cells):
         """ exact algorithm runner """
@@ -87,7 +86,7 @@ class PerformanceRunner:
         """ main performance runner for different good solutions """
 
         for i, good_solution in enumerate(self.good_solutions):
-            print(f"Running for good_solution {i+1}")
+            print(f"Running for good_solution {i + 1}")
             self.run_for_solution(good_solution)
             print(f"Finished for good_solution {i + 1}")
 
