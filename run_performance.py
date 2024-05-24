@@ -176,6 +176,9 @@ class PerformanceRunner:
             exact_data = Reference(avg_ws, min_col=exact_column, min_row=1, max_row=avg_ws.max_row)
             avg_chart.add_data(exact_data, titles_from_data=True)
 
+        categories = Reference(avg_ws, min_col=1, min_row=2, max_row=avg_ws.max_row)
+        avg_chart.set_categories(categories)
+
         avg_chart.legend.position = 'r'
         avg_chart.x_axis.title = "Solver Type"
         avg_chart.y_axis.title = "Average Performance Score"
