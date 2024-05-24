@@ -11,7 +11,7 @@ class ExactAlgorithm:
         for i, j in self.sudoku.non_perm_cells_list:
             self.sudoku.board[i][j] = 1
 
-    def exact_algorithm(self):
+    def exact_algorithm(self) -> Sudoku:
 
         # 1. Fill with ones
         self.fill_sudoku_with_ones()
