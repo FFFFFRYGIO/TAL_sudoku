@@ -38,11 +38,12 @@ class PerformanceRunner:
         genetic_algorithm = GeneticAlgorithm(sudoku, population_number=population_number)
         result_sudoku = genetic_algorithm.genetic_algorithm()
 
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+
         if not result_sudoku.is_valid():
             raise ValueError(f"GeneticAlgorithm {population_number}: Sudoku not solved properly")
 
-        end_time = time.time()
-        elapsed_time = end_time - start_time
         print(f"Finished GeneticAlgorithm for num_of_empty_cells {num_of_empty_cells} and population_number {population_number} with time {elapsed_time}")
 
     def run_for_solution(self, good_solution):
