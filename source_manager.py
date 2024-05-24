@@ -73,13 +73,13 @@ def get_good_solution(file_name: str = None) -> List[Tuple[int, int, int]]:
     return good_solution
 
 
-def get_solutions(solutions_file_list: List[str] = None) -> List[List[Tuple[int, int, int]]]:
+def get_solutions(num_of_solutions_to_use, solutions_file_list: List[str] = None) -> List[List[Tuple[int, int, int]]]:
     if not solutions_file_list:
         solutions_file_list = [f'good_solution_{i}' for i in range(1, len(GOOD_SOLUTIONS) + 1)]
 
     good_solutions = []
-    for good_solution_file in solutions_file_list:
-        good_solutions.append(get_good_solution(good_solution_file))
+    for _ in range(num_of_solutions_to_use):
+        good_solutions.append(get_good_solution(solutions_file_list.pop()))
     return good_solutions
 
 

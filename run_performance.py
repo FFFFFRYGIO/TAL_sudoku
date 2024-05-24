@@ -14,7 +14,8 @@ from source_manager import get_solutions
 class PerformanceRunner:
     """ PerformanceRunner class to run preconfigured performance calculations and save them with analysis to excel """
 
-    def __init__(self, num_of_empty_cells_range, genetic_algorithm_population_numbers, output_file_name):
+    def __init__(self, num_of_solutions_to_use, num_of_empty_cells_range, genetic_algorithm_population_numbers,
+                 output_file_name):
         self.num_of_empty_cells_range = num_of_empty_cells_range
         self.genetic_algorithm_population_numbers = genetic_algorithm_population_numbers
 
@@ -22,7 +23,7 @@ class PerformanceRunner:
             os.makedirs('performance_results')
         self.output_file_path = os.path.join('performance_results', output_file_name)
 
-        self.good_solutions = get_solutions()  # TODO: set the amount of solutions to import by parameter
+        self.good_solutions = get_solutions(num_of_solutions_to_use)
 
         self.average_summary = {
             solver: [] for solver in ['exact'] + [f'genetic_{p}' for p in self.genetic_algorithm_population_numbers]
@@ -202,8 +203,10 @@ class PerformanceRunner:
 
 
 if __name__ == '__main__':
+    NUM_OF_SOLUTIONS_TO_USE = 3
     GENETIC_ALGORYTHM_POPULATION_NUMBERS = [5, 10, 20]
     NUM_OF_EMPTY_CELLS_RANGE = range(3, 7)
     OUTPUT_FILE_NAME = 'performance_results.xlsx'
-    runner = PerformanceRunner(NUM_OF_EMPTY_CELLS_RANGE, GENETIC_ALGORYTHM_POPULATION_NUMBERS, OUTPUT_FILE_NAME)
+    runner = PerformanceRunner(NUM_OF_SOLUTIONS_TO_USE, NUM_OF_EMPTY_CELLS_RANGE, GENETIC_ALGORYTHM_POPULATION_NUMBERS,
+                               OUTPUT_FILE_NAME)
     runner.main()
