@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="inserting dicstrings">
+    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="run_performance.py with sharts">
       <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performance_results/performance_results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/performance_results/performance_results.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_performance.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_performance.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +87,7 @@
       <recent name="C:\Users\radek\PycharmProjects\TAL_sudoku\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.interactive_sudoku">
+  <component name="RunManager" selected="Python.run_performance">
     <configuration name="interactive_sudoku" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TAL_sudoku" />
       <option name="ENV_FILES" value="" />
@@ -165,8 +165,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.interactive_sudoku" />
         <item itemvalue="Python.run_performance" />
+        <item itemvalue="Python.interactive_sudoku" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +192,7 @@
       <workItem from="1716219849952" duration="1297000" />
       <workItem from="1716377233123" duration="131000" />
       <workItem from="1716466323169" duration="23660000" />
-      <workItem from="1716536695611" duration="20629000" />
+      <workItem from="1716536695611" duration="29102000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <option name="closed" value="true" />
@@ -546,16 +546,37 @@
       <option name="project" value="LOCAL" />
       <updated>1716559334158</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="clean code">
+      <option name="closed" value="true" />
+      <created>1716559370909</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1716559370909</updated>
+    </task>
+    <task id="LOCAL-00046" summary="IDE config changes">
+      <option name="closed" value="true" />
+      <created>1716559387000</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1716559387000</updated>
+    </task>
+    <task id="LOCAL-00047" summary="run_performance.py with sharts">
+      <option name="closed" value="true" />
+      <created>1716567661270</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1716567661270</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="good_solution file" />
-    <MESSAGE value="add mark to sudoku" />
-    <MESSAGE value="proper init of GenericAlgorithm" />
     <MESSAGE value="change marking evaluation" />
     <MESSAGE value="do not accept zero value for num_of_empty_cells" />
     <MESSAGE value="rename to GeneticAlgorithmTests" />
@@ -578,7 +599,10 @@
     <MESSAGE value="interactive sudoku with sudoku_problem.txt example" />
     <MESSAGE value="clean code changes" />
     <MESSAGE value="inserting dicstrings" />
-    <option name="LAST_COMMIT_MESSAGE" value="inserting dicstrings" />
+    <MESSAGE value="clean code" />
+    <MESSAGE value="IDE config changes" />
+    <MESSAGE value="run_performance.py with sharts" />
+    <option name="LAST_COMMIT_MESSAGE" value="run_performance.py with sharts" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -593,7 +617,7 @@
     <SUITE FILE_PATH="coverage/TAL_sudoku$good_solution_source.coverage" NAME="good_solution_source Coverage Results" MODIFIED="1716541825890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$interactive_sudoku.coverage" NAME="interactive_sudoku Coverage Results" MODIFIED="1716558427715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$good_solution_source__1_.coverage" NAME="good_solution_source (1) Coverage Results" MODIFIED="1716540296790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TAL_sudoku$run_performance.coverage" NAME="run_performance Coverage Results" MODIFIED="1716556282986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TAL_sudoku$run_performance.coverage" NAME="run_performance Coverage Results" MODIFIED="1716567716715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$test.coverage" NAME="test Coverage Results" MODIFIED="1716142096261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$.coverage" NAME=" Coverage Results" MODIFIED="1716541811573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
