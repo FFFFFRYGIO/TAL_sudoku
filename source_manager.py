@@ -70,7 +70,7 @@ def get_good_solution(file_name: str = None) -> List[Tuple[int, int, int]]:
         file_name = choice(os.listdir('good_solutions'))
 
     good_solution = []
-    with open(os.path.join('good_solutions', file_name), 'r') as f:
+    with open(os.path.join('good_solutions', file_name)) as f:
         i = j = 0
         for line in f:
             for value in line.strip().split():
@@ -99,7 +99,7 @@ def get_problem(file_name: str) -> List[Tuple[int, int, int]]:
         raise FileNotFoundError(f"File {file_name} does not exist in the problems_source directory.")
 
     good_solution = []
-    with open(file_path, 'r') as f:
+    with open(file_path) as f:
         i = j = 0
         for line in f:
             for value in line.strip().split('\t'):
