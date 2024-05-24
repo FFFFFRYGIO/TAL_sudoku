@@ -108,4 +108,5 @@ if __name__ == '__main__':
                 print('sudoku not valid')
                 sudoku.display()
 
+
     test_save_get_solutions()
