@@ -207,6 +207,6 @@ if __name__ == '__main__':
     GENETIC_ALGORYTHM_POPULATION_NUMBERS = [5, 10, 20]
     NUM_OF_EMPTY_CELLS_RANGE = range(3, 7)
     OUTPUT_FILE_NAME = 'performance_results.xlsx'
-    runner = PerformanceRunner(NUM_OF_SOLUTIONS_TO_USE, NUM_OF_EMPTY_CELLS_RANGE, GENETIC_ALGORYTHM_POPULATION_NUMBERS,
-                               OUTPUT_FILE_NAME)
+    runner = PerformanceRunner(
+        NUM_OF_SOLUTIONS_TO_USE, NUM_OF_EMPTY_CELLS_RANGE, GENETIC_ALGORYTHM_POPULATION_NUMBERS, OUTPUT_FILE_NAME)
     runner.main()
