@@ -5,7 +5,7 @@ from ddt import ddt, data, unpack
 
 from Sudoku import get_random_sudoku
 from genetic_algorithm import GeneticAlgorithm
-from good_solution_source import get_good_solution
+from source_manager import get_good_solution
 
 
 @ddt

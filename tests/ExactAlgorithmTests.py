@@ -2,7 +2,7 @@ import unittest
 
 from Sudoku import get_random_sudoku
 from exact_algorithm import ExactAlgorithm
-from good_solution_source import get_good_solution
+from source_manager import get_good_solution
 
 
 class ExactAlgorithmTests(unittest.TestCase):

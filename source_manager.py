@@ -83,6 +83,22 @@ def get_solutions(solutions_file_list: List[str] = None) -> List[List[Tuple[int,
     return good_solutions
 
 
+def get_problem(file_name: str) -> List[Tuple[int, int, int]]:
+    file_path = os.path.join('problems_source', file_name)
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File {file_name} does not exist in the problems_source directory.")
+
+    good_solution = []
+    with open(file_path, 'r') as f:
+        i = j = 0
+        for line in f:
+            for value in line.strip().split('\t'):
+                if value:
+                    good_solution.append((i, j, int(value)))
+                i, j = (i + 1, 0) if j == 8 else (i, j + 1)
+    return good_solution
+
+
 if __name__ == '__main__':
     def test_save_get_solutions():
         file_names = save_solutions(GOOD_SOLUTIONS)
