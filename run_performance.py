@@ -200,35 +200,6 @@ class PerformanceRunner:
         self.get_avg_time_results()
         self.create_avg_time_charts()
 
-        # avg_chart = LineChart()
-        # avg_chart.title = "Average Performance Comparison"
-        # avg_chart.style = 13
-
-        # cats = Reference(ws_avg, min_col=1, max_col=1, min_row=1, max_row=len(solvers))
-        # data = Reference(ws_avg, min_col=2, max_col=len(list(self.num_of_empty_cells_range)) + 1, min_row=1, max_row=len(solvers))
-        #
-        # avg_chart.add_data(data, titles_from_data=True, from_rows=True)
-        # avg_chart.set_categories(cats)
-
-        #     last_row = ws.max_row
-        #     data_ref = Reference(ws, min_col=2, min_row=last_row, max_col=len(self.num_of_empty_cells_range) + 1,
-        #                          max_row=last_row)
-        #     series = LineChart.series(data_ref, title=solver)
-        #     avg_chart.series.append(series)
-        #
-        # if f'{solver}_average' in column_titles:
-        #     avg_col = column_titles[f'{solver}_average']
-        #     avg_data = Reference(ws, min_col=avg_col, min_row=ws.max_row, max_col=avg_col, max_row=ws.max_row)
-        #     avg_chart.add_data(avg_data, titles_from_data=True)
-
-        # avg_chart.legend.position = 'r'
-        # avg_chart.x_axis.title = "Solver Type"
-        # avg_chart.y_axis.title = "Average Performance Score"
-
-        # ws_avg.add_chart(avg_chart, f"A{ws_avg.max_row + 2}")
-
-        # wb.save(os.path.join('performance_results', 'performance_results.xlsx'))
-
 
 if __name__ == '__main__':
     GENETIC_ALGORYTHM_POPULATION_NUMBERS = [5, 10, 20]
