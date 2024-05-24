@@ -21,7 +21,6 @@ class PerformanceRunner:
         if not os.path.exists('performance_results'):
             os.makedirs('performance_results')
         self.output_file_path = os.path.join('performance_results', output_file_name)
-        self.writer = pd.ExcelWriter(self.output_file_path, engine='openpyxl')
 
         self.good_solutions = get_solutions()  # TODO: set the amount of solutions to import by parameter
 
