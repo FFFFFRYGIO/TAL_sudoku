@@ -5,7 +5,7 @@ from Sudoku import Sudoku
 
 
 class GeneticAlgorithm:
-    def __init__(self, sudoku_to_solve: Sudoku, population_number=10):
+    def __init__(self, sudoku_to_solve: Sudoku, population_number: int = 10):
         self.sudoku_to_solve = copy.deepcopy(sudoku_to_solve)
         self.population_number = population_number
         self.population = []
@@ -70,7 +70,7 @@ class GeneticAlgorithm:
                 return solution
         return None
 
-    def genetic_algorithm(self):
+    def genetic_algorithm(self) -> Sudoku:
         # 1. Initial Population
         self.initial_population()
 
