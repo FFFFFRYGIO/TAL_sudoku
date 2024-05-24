@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="replace value reference to getter">
+    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="run_performance.py implementation">
+      <change afterPath="$PROJECT_DIR$/good_solution_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TAL_sudoku.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TAL_sudoku.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exact_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/exact_algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/SudokuTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/SudokuTests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genetic_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/genetic_algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_performance.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_performance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/good_solution.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/good_solution_source.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Unit Test" />
         <option value="Python Script" />
       </list>
     </option>
@@ -35,121 +41,101 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for SudokuTest.SudokuTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for SudokuTests.SudokuTests.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sudoku.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.executor": "Run",
+    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm.executor": "Run",
+    "Python tests.Python tests for GeneticAlgorithmTests.ExactAlgorithmTests.executor": "Run",
+    "Python tests.Python tests for GeneticAlgorithmTests.ExactAlgorithmTests.test_genetic_algorithm.executor": "Run",
+    "Python tests.Python tests for GeneticAlgorithmTests.GeneticAlgorithmTests.executor": "Run",
+    "Python tests.Python tests for GeneticAlgorithmTests.GeneticAlgorithmTests.test_genetic_algorithm.executor": "Run",
+    "Python tests.Python tests for SudokuTest.SudokuTest.executor": "Run",
+    "Python tests.Python tests for SudokuTests.SudokuTests.executor": "Run",
+    "Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes.executor": "Run",
+    "Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid.executor": "Run",
+    "Python tests.Python tests in good_solution_source.py.executor": "Run",
+    "Python tests.Python tests in tests.executor": "Run",
+    "Python.good_solution_source (1).executor": "Run",
+    "Python.good_solution_source.executor": "Run",
+    "Python.run_performance.executor": "Run",
+    "Python.sudoku.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/radek/PycharmProjects/TAL_sudoku/good_solution_source.py",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\radek\PycharmProjects\TAL_sudoku" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\radek\PycharmProjects\TAL_sudoku" />
       <recent name="C:\Users\radek\PycharmProjects\TAL_sudoku\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm">
-    <configuration name="Python tests for ExactAlgorithmTests.ExactAlgorithmTests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.good_solution_source">
+    <configuration name="good_solution_source" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="TAL_sudoku" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_NAME" value="Python 3.12 (TAL_sudoku)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;ExactAlgorithmTests.ExactAlgorithmTests&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/good_solution_source.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="run_performance" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TAL_sudoku" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_performance.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for SudokuTests.SudokuTests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="TAL_sudoku" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;SudokuTests.SudokuTests&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="TAL_sudoku" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="TAL_sudoku" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Python.good_solution_source" />
+      <item itemvalue="Python.run_performance" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm" />
-        <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes" />
-        <item itemvalue="Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests" />
-        <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests" />
-        <item itemvalue="Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid" />
+        <item itemvalue="Python.run_performance" />
       </list>
     </recent_temporary>
   </component>
@@ -174,6 +160,8 @@
       <workItem from="1716203225162" duration="6262000" />
       <workItem from="1716219849952" duration="1297000" />
       <workItem from="1716377233123" duration="131000" />
+      <workItem from="1716466323169" duration="23660000" />
+      <workItem from="1716536695611" duration="5090000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <option name="closed" value="true" />
@@ -271,17 +259,165 @@
       <option name="project" value="LOCAL" />
       <updated>1716219906794</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="refractor sudoku, optimize time">
+      <option name="closed" value="true" />
+      <created>1716471172116</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716471172116</updated>
+    </task>
+    <task id="LOCAL-00014" summary="use good solution">
+      <option name="closed" value="true" />
+      <created>1716478624775</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716478624775</updated>
+    </task>
+    <task id="LOCAL-00015" summary="good solution manage">
+      <option name="closed" value="true" />
+      <created>1716478640444</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716478640444</updated>
+    </task>
+    <task id="LOCAL-00016" summary="use good solution">
+      <option name="closed" value="true" />
+      <created>1716478651091</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716478651091</updated>
+    </task>
+    <task id="LOCAL-00017" summary="remove GOOD_SOLUTION">
+      <option name="closed" value="true" />
+      <created>1716478664789</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716478664789</updated>
+    </task>
+    <task id="LOCAL-00018" summary="genetic algorithm">
+      <option name="closed" value="true" />
+      <created>1716478682000</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716478682000</updated>
+    </task>
+    <task id="LOCAL-00019" summary="good_solution file">
+      <option name="closed" value="true" />
+      <created>1716478706909</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716478706909</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add mark to sudoku">
+      <option name="closed" value="true" />
+      <created>1716482071427</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716482071427</updated>
+    </task>
+    <task id="LOCAL-00021" summary="proper init of GenericAlgorithm">
+      <option name="closed" value="true" />
+      <created>1716482095433</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716482095433</updated>
+    </task>
+    <task id="LOCAL-00022" summary="change marking evaluation">
+      <option name="closed" value="true" />
+      <created>1716505321775</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1716505321775</updated>
+    </task>
+    <task id="LOCAL-00023" summary="do not accept zero value for num_of_empty_cells">
+      <option name="closed" value="true" />
+      <created>1716505357586</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1716505357586</updated>
+    </task>
+    <task id="LOCAL-00024" summary="rename to GeneticAlgorithmTests">
+      <option name="closed" value="true" />
+      <created>1716505387692</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1716505387692</updated>
+    </task>
+    <task id="LOCAL-00025" summary="unify population number">
+      <option name="closed" value="true" />
+      <created>1716506294908</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1716506294908</updated>
+    </task>
+    <task id="LOCAL-00026" summary="generic algorithm implementation">
+      <option name="closed" value="true" />
+      <created>1716506311875</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1716506311875</updated>
+    </task>
+    <task id="LOCAL-00027" summary="rename to GeneticAlgorithm">
+      <option name="closed" value="true" />
+      <created>1716506454177</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1716506454177</updated>
+    </task>
+    <task id="LOCAL-00028" summary="parametrize test_genetic_algorithm">
+      <option name="closed" value="true" />
+      <created>1716508022392</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1716508022392</updated>
+    </task>
+    <task id="LOCAL-00029" summary="change default num_of_empty_cells range to (1, 5)">
+      <option name="closed" value="true" />
+      <created>1716508501440</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1716508501440</updated>
+    </task>
+    <task id="LOCAL-00030" summary="parametrize to manage many solutions">
+      <option name="closed" value="true" />
+      <created>1716512243504</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1716512243504</updated>
+    </task>
+    <task id="LOCAL-00031" summary="run_performance.py implementation">
+      <option name="closed" value="true" />
+      <created>1716512274067</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1716512274067</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial" />
-    <MESSAGE value="Sudoku, SudokuTest" />
-    <MESSAGE value="rename SudokuTests.py" />
-    <MESSAGE value="exact algorithm test and implementation, updates" />
     <MESSAGE value="cosmetic" />
     <MESSAGE value="fix incrementing values in board" />
     <MESSAGE value="cosmetics" />
@@ -289,11 +425,40 @@
     <MESSAGE value="cells verification" />
     <MESSAGE value="cell setter and getter" />
     <MESSAGE value="replace value reference to getter" />
-    <option name="LAST_COMMIT_MESSAGE" value="replace value reference to getter" />
+    <MESSAGE value="refractor sudoku, optimize time" />
+    <MESSAGE value="good solution manage" />
+    <MESSAGE value="use good solution" />
+    <MESSAGE value="remove GOOD_SOLUTION" />
+    <MESSAGE value="genetic algorithm" />
+    <MESSAGE value="good_solution file" />
+    <MESSAGE value="add mark to sudoku" />
+    <MESSAGE value="proper init of GenericAlgorithm" />
+    <MESSAGE value="change marking evaluation" />
+    <MESSAGE value="do not accept zero value for num_of_empty_cells" />
+    <MESSAGE value="rename to GeneticAlgorithmTests" />
+    <MESSAGE value="unify population number" />
+    <MESSAGE value="generic algorithm implementation" />
+    <MESSAGE value="rename to GeneticAlgorithm" />
+    <MESSAGE value="parametrize test_genetic_algorithm" />
+    <MESSAGE value="change default num_of_empty_cells range to (1, 5)" />
+    <MESSAGE value="parametrize to manage many solutions" />
+    <MESSAGE value="run_performance.py implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="run_performance.py implementation" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="tests">
+        <watch expression="self.sudoku_to_solve.board[8]" />
+        <watch expression="self.sudoku_to_solve.non_perm_cells_list[0]" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TAL_sudoku$sudoku.coverage" NAME="sudoku Coverage Results" MODIFIED="1716141932465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TAL_sudoku$good_solution_source.coverage" NAME="good_solution_source Coverage Results" MODIFIED="1716541825890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TAL_sudoku$good_solution_source__1_.coverage" NAME="good_solution_source (1) Coverage Results" MODIFIED="1716540296790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TAL_sudoku$run_performance.coverage" NAME="run_performance Coverage Results" MODIFIED="1716541396013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$test.coverage" NAME="test Coverage Results" MODIFIED="1716142096261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TAL_sudoku$.coverage" NAME=" Coverage Results" MODIFIED="1716204109794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/TAL_sudoku$.coverage" NAME=" Coverage Results" MODIFIED="1716541811573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
