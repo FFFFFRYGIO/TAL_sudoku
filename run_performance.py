@@ -14,10 +14,20 @@ from source_manager import get_solutions
 class PerformanceRunner:
     """ PerformanceRunner class to run preconfigured performance calculations and save them with analysis to excel """
 
-    def __init__(self, num_of_empty_cells_range, genetic_algorithm_population_numbers):
+    def __init__(self, num_of_empty_cells_range, genetic_algorithm_population_numbers, output_file_name):
         self.num_of_empty_cells_range = num_of_empty_cells_range
         self.genetic_algorithm_population_numbers = genetic_algorithm_population_numbers
-        self.good_solutions = get_solutions()
+
+        if not os.path.exists('performance_results'):
+            os.makedirs('performance_results')
+        self.output_file_path = os.path.join('performance_results', output_file_name)
+        self.writer = pd.ExcelWriter(self.output_file_path, engine='openpyxl')
+
+        self.good_solutions = get_solutions()  # TODO: set the amount of solutions to import by parameter
+
+        self.average_summary = {
+            solver: [] for solver in ['exact'] + [f'genetic_{p}' for p in self.genetic_algorithm_population_numbers]
+        }
 
         self.results = {}
         for n in self.num_of_empty_cells_range:
@@ -62,7 +72,8 @@ class PerformanceRunner:
         if not result_sudoku.is_valid():
             raise ValueError(f"GeneticAlgorithm {population_number}: Sudoku not solved properly")
 
-        print(f"Finished GeneticAlgorithm for p={population_number} and n={num_of_empty_cells} with time {elapsed_time}")
+        print(
+            f"Finished GeneticAlgorithm for p={population_number} and n={num_of_empty_cells} with time {elapsed_time}")
         return elapsed_time
 
     def run_for_solution(self, good_solution):
@@ -77,29 +88,29 @@ class PerformanceRunner:
 
             for population_number in self.genetic_algorithm_population_numbers:
                 for _ in range(10):
-                    genetic_time = self.run_genetic_algorithm_performance(good_solution, num_of_empty_cells, population_number)
+                    genetic_time = self.run_genetic_algorithm_performance(
+                        good_solution, num_of_empty_cells, population_number)
                     self.results[f'genetic_{population_number}_{num_of_empty_cells}'].append(genetic_time)
 
             print(f"Finished for n={num_of_empty_cells}")
 
-    def main(self):
-        """ main performance runner for different good solutions """
-
-        for i, good_solution in enumerate(self.good_solutions):
-            print(f"Running for good_solution {i + 1}")
-            self.run_for_solution(good_solution)
-            print(f"Finished for good_solution {i + 1}")
+    def save_time_results(self):
+        """ save time results from running solvers with different solutions or number of empty cells """
 
         df = pd.DataFrame.from_dict(self.results, orient='index').transpose()
         for n in self.num_of_empty_cells_range:
             df[f'index_{n}'] = df.index
 
-        if not os.path.exists('performance_results'):
-            os.makedirs('performance_results')
+        averages_df = pd.DataFrame([df.mean()], index=['Average'])
+        df = pd.concat([df, averages_df])
 
-        df.to_excel(os.path.join('performance_results', 'performance_results.xlsx'), engine='openpyxl')
+        with pd.ExcelWriter(self.output_file_path, engine='openpyxl') as writer:
+            df.to_excel(writer, sheet_name="Performance Results")
 
-        wb = openpyxl.load_workbook(os.path.join('performance_results', 'performance_results.xlsx'))
+    def create_time_charts(self):
+        """ create charts for every number of empty cells to compare solvers performance """
+
+        wb = openpyxl.load_workbook(self.output_file_path)
         ws = wb.active
 
         column_titles = {cell.value: cell.column for cell in ws[1]}
@@ -110,12 +121,12 @@ class PerformanceRunner:
             chart.style = 13
 
             exact_column = column_titles[f'exact_{n}']
-            exact_data = Reference(ws, min_col=exact_column, min_row=1, max_row=ws.max_row)
+            exact_data = Reference(ws, min_col=exact_column, min_row=1, max_row=ws.max_row - 1)
             chart.add_data(exact_data, titles_from_data=True)
 
             for p in self.genetic_algorithm_population_numbers:
                 genetic_column = column_titles[f'genetic_{p}_{n}']
-                genetic_data = Reference(ws, min_col=genetic_column, min_row=1, max_row=ws.max_row)
+                genetic_data = Reference(ws, min_col=genetic_column, min_row=1, max_row=ws.max_row - 1)
                 chart.add_data(genetic_data, titles_from_data=True)
 
             chart.legend.position = 'r'
@@ -124,11 +135,102 @@ class PerformanceRunner:
 
             ws.add_chart(chart, f"A{ws.max_row + 2}")
 
-            wb.save(os.path.join('performance_results', 'performance_results.xlsx'))
+        wb.save(self.output_file_path)
+
+    def get_avg_time_results(self):
+        """ get average time results and save it in different sheet """
+
+        wb = openpyxl.load_workbook(self.output_file_path)
+        ws = wb.active
+
+        column_titles = {cell.value: cell.column for cell in ws[1]}
+
+        for solver in self.average_summary:
+            for n in self.num_of_empty_cells_range:
+                if f'{solver}_{n}' in column_titles:
+                    col = column_titles[f'{solver}_{n}']
+                    self.average_summary[solver].append(ws.cell(row=ws.max_row, column=col).value)
+
+        wb.save(self.output_file_path)
+
+        df_avg = pd.DataFrame.from_dict(self.average_summary, orient='index').transpose()
+
+        df_avg.index = self.num_of_empty_cells_range
+
+        with pd.ExcelWriter(self.output_file_path, engine='openpyxl', mode='a') as writer:
+            df_avg.to_excel(writer, sheet_name='Average Performance Comparison')
+
+    def create_avg_time_charts(self):
+        """ create charts for average times of solvers to compare their performance """
+
+        avg_wb = openpyxl.load_workbook(self.output_file_path)
+        avg_ws = avg_wb['Average Performance Comparison']
+
+        avg_chart = LineChart()
+        avg_chart.title = "Average Performance Comparison"
+        avg_chart.style = 13
+
+        column_titles = {cell.value: cell.column for cell in avg_ws[1]}
+
+        for solver in self.average_summary:
+            exact_column = column_titles[solver]
+            exact_data = Reference(avg_ws, min_col=exact_column, min_row=1, max_row=avg_ws.max_row)
+            avg_chart.add_data(exact_data, titles_from_data=True)
+
+        avg_chart.legend.position = 'r'
+        avg_chart.x_axis.title = "Solver Type"
+        avg_chart.y_axis.title = "Average Performance Score"
+
+        avg_ws.add_chart(avg_chart, f"A{avg_ws.max_row + 2}")
+
+        avg_wb.save(os.path.join('performance_results', 'performance_results.xlsx'))
+
+    def main(self):
+        """ main performance runner for different good solutions """
+
+        for i, good_solution in enumerate(self.good_solutions):
+            print(f"Running for good_solution {i + 1}")
+            self.run_for_solution(good_solution)
+            print(f"Finished for good_solution {i + 1}")
+
+        self.save_time_results()
+        self.create_time_charts()
+        self.get_avg_time_results()
+        self.create_avg_time_charts()
+
+        # avg_chart = LineChart()
+        # avg_chart.title = "Average Performance Comparison"
+        # avg_chart.style = 13
+
+        # cats = Reference(ws_avg, min_col=1, max_col=1, min_row=1, max_row=len(solvers))
+        # data = Reference(ws_avg, min_col=2, max_col=len(list(self.num_of_empty_cells_range)) + 1, min_row=1, max_row=len(solvers))
+        #
+        # avg_chart.add_data(data, titles_from_data=True, from_rows=True)
+        # avg_chart.set_categories(cats)
+
+        #     last_row = ws.max_row
+        #     data_ref = Reference(ws, min_col=2, min_row=last_row, max_col=len(self.num_of_empty_cells_range) + 1,
+        #                          max_row=last_row)
+        #     series = LineChart.series(data_ref, title=solver)
+        #     avg_chart.series.append(series)
+        #
+        # if f'{solver}_average' in column_titles:
+        #     avg_col = column_titles[f'{solver}_average']
+        #     avg_data = Reference(ws, min_col=avg_col, min_row=ws.max_row, max_col=avg_col, max_row=ws.max_row)
+        #     avg_chart.add_data(avg_data, titles_from_data=True)
+
+        # avg_chart.legend.position = 'r'
+        # avg_chart.x_axis.title = "Solver Type"
+        # avg_chart.y_axis.title = "Average Performance Score"
+
+        # ws_avg.add_chart(avg_chart, f"A{ws_avg.max_row + 2}")
+
+        # wb.save(os.path.join('performance_results', 'performance_results.xlsx'))
 
 
 if __name__ == '__main__':
     GENETIC_ALGORYTHM_POPULATION_NUMBERS = [5, 10, 20]
-    NUM_OF_EMPTY_CELLS_RANGE = range(2, 7)
-    runner = PerformanceRunner(NUM_OF_EMPTY_CELLS_RANGE, GENETIC_ALGORYTHM_POPULATION_NUMBERS)
+    NUM_OF_EMPTY_CELLS_RANGE = range(3, 7)
+    OUTPUT_FILE_NAME = 'performance_results.xlsx'
+    runner = PerformanceRunner(NUM_OF_EMPTY_CELLS_RANGE, GENETIC_ALGORYTHM_POPULATION_NUMBERS, OUTPUT_FILE_NAME)
     runner.main()
