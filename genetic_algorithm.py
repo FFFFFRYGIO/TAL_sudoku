@@ -40,7 +40,7 @@ class GeneticAlgorithm:
         shuffle(self.population)
         for first_parent_index in range(0, len(self.population) - 1, 2):
             parent1 = self.population[first_parent_index]
-            parent2 = self.population[first_parent_index+1]
+            parent2 = self.population[first_parent_index + 1]
             child = copy.deepcopy(self.sudoku_to_solve)
             which_parent = 1
             for i, j in self.sudoku_to_solve.non_perm_cells_list:
