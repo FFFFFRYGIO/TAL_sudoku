@@ -7,11 +7,10 @@ from exact_algorithm import ExactAlgorithm
 
 
 class PerformanceRunner:
-    def __init__(self, solutions_file_list, num_of_empty_cells_range, genetic_algorithm_population_numbers):
-        self.solutions_file_list = solutions_file_list
+    def __init__(self, num_of_empty_cells_range, genetic_algorithm_population_numbers):
         self.num_of_empty_cells_range = num_of_empty_cells_range
         self.genetic_algorithm_population_numbers = genetic_algorithm_population_numbers
-        self.good_solutions = get_solutions(self.solutions_file_list)
+        self.good_solutions = get_solutions()
 
     @staticmethod
     def run_exact_algorithm_performance(good_solution, num_of_empty_cells):
@@ -62,8 +61,7 @@ class PerformanceRunner:
 
 
 if __name__ == '__main__':
-    SOLUTIONS_FILE_LIST = ['good_solution.txt']
     GENETIC_ALGORYTHM_POPULATION_NUMBERS = [5, 10, 20]
     NUM_OF_EMPTY_CELLS_RANGE = range(1, 7)
-    runner = PerformanceRunner(SOLUTIONS_FILE_LIST, NUM_OF_EMPTY_CELLS_RANGE, GENETIC_ALGORYTHM_POPULATION_NUMBERS)
+    runner = PerformanceRunner(NUM_OF_EMPTY_CELLS_RANGE, GENETIC_ALGORYTHM_POPULATION_NUMBERS)
     runner.main()
