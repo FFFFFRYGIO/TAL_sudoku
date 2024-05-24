@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="run_performance.py with sharts">
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="remove redundant defaults for opening file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performance_results/performance_results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/performance_results/performance_results.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_performance.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_performance.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,38 +38,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.executor": "Run",
-    "Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm.executor": "Run",
-    "Python tests.Python tests for GeneticAlgorithmTests.ExactAlgorithmTests.executor": "Run",
-    "Python tests.Python tests for GeneticAlgorithmTests.ExactAlgorithmTests.test_genetic_algorithm.executor": "Run",
-    "Python tests.Python tests for GeneticAlgorithmTests.GeneticAlgorithmTests.executor": "Run",
-    "Python tests.Python tests for GeneticAlgorithmTests.GeneticAlgorithmTests.test_genetic_algorithm.executor": "Run",
-    "Python tests.Python tests for SudokuTest.SudokuTest.executor": "Run",
-    "Python tests.Python tests for SudokuTests.SudokuTests.executor": "Run",
-    "Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes.executor": "Run",
-    "Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid.executor": "Run",
-    "Python tests.Python tests in good_solution_source.py.executor": "Run",
-    "Python tests.Python tests in tests.executor": "Run",
-    "Python.good_solution_source (1).executor": "Run",
-    "Python.good_solution_source.executor": "Run",
-    "Python.interactive_sudoku.executor": "Run",
-    "Python.run_performance.executor": "Run",
-    "Python.sudoku.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/radek/PycharmProjects/TAL_sudoku",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for ExactAlgorithmTests.ExactAlgorithmTests.test_exact_algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for GeneticAlgorithmTests.ExactAlgorithmTests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for GeneticAlgorithmTests.ExactAlgorithmTests.test_genetic_algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for GeneticAlgorithmTests.GeneticAlgorithmTests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for GeneticAlgorithmTests.GeneticAlgorithmTests.test_genetic_algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for SudokuTest.SudokuTest.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for SudokuTests.SudokuTests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_count_mistakes.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for SudokuTests.SudokuTests.test_sudoku_good_solution_is_valid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in good_solution_source.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python.good_solution_source (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.good_solution_source.executor&quot;: &quot;Run&quot;,
+    &quot;Python.interactive_sudoku.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_performance.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sudoku.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/radek/PycharmProjects/TAL_sudoku&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="QodanaReportsService">
     <option name="descriptions">
       <ReportDescription localRun="true" path="C:\Users\radek\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="deb790f0-2376-4304-b229-1c771e70e22d" reportId="TAL_sudoku/qodana/2024-05-24" />
@@ -159,9 +157,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.source_manager" />
       <item itemvalue="Python.interactive_sudoku" />
       <item itemvalue="Python.run_performance" />
+      <item itemvalue="Python.source_manager" />
     </list>
     <recent_temporary>
       <list>
@@ -192,55 +190,8 @@
       <workItem from="1716219849952" duration="1297000" />
       <workItem from="1716377233123" duration="131000" />
       <workItem from="1716466323169" duration="23660000" />
-      <workItem from="1716536695611" duration="29102000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial">
-      <option name="closed" value="true" />
-      <created>1716139209531</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1716139209531</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Sudoku, SudokuTest">
-      <option name="closed" value="true" />
-      <created>1716143158184</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1716143158184</updated>
-    </task>
-    <task id="LOCAL-00003" summary="rename SudokuTests.py">
-      <option name="closed" value="true" />
-      <created>1716143238129</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1716143238129</updated>
-    </task>
-    <task id="LOCAL-00004" summary="exact algorithm test and implementation, updates">
-      <option name="closed" value="true" />
-      <created>1716147714373</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1716147714373</updated>
-    </task>
-    <task id="LOCAL-00005" summary="cosmetic">
-      <option name="closed" value="true" />
-      <created>1716147741235</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1716147741235</updated>
-    </task>
-    <task id="LOCAL-00006" summary="cosmetic">
-      <option name="closed" value="true" />
-      <created>1716147766980</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1716147766980</updated>
+      <workItem from="1716536695611" duration="30240000" />
+      <workItem from="1716576837122" duration="277000" />
     </task>
     <task id="LOCAL-00007" summary="fix incrementing values in board">
       <option name="closed" value="true" />
@@ -570,21 +521,77 @@
       <option name="project" value="LOCAL" />
       <updated>1716567661270</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="remove unused writer">
+      <option name="closed" value="true" />
+      <created>1716567975897</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1716567975897</updated>
+    </task>
+    <task id="LOCAL-00049" summary="set categories for average chart">
+      <option name="closed" value="true" />
+      <created>1716567993265</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1716567993265</updated>
+    </task>
+    <task id="LOCAL-00050" summary="remove old code">
+      <option name="closed" value="true" />
+      <created>1716568001733</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1716568001734</updated>
+    </task>
+    <task id="LOCAL-00051" summary="update example performance_results.xlsx">
+      <option name="closed" value="true" />
+      <created>1716568015602</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1716568015602</updated>
+    </task>
+    <task id="LOCAL-00052" summary="IDE config">
+      <option name="closed" value="true" />
+      <created>1716568032260</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1716568032260</updated>
+    </task>
+    <task id="LOCAL-00053" summary="parametrize number of solutions to import">
+      <option name="closed" value="true" />
+      <created>1716568368514</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1716568368514</updated>
+    </task>
+    <task id="LOCAL-00054" summary="insert docstrings">
+      <option name="closed" value="true" />
+      <created>1716568396602</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1716568396602</updated>
+    </task>
+    <task id="LOCAL-00055" summary="remove redundant defaults for opening file">
+      <option name="closed" value="true" />
+      <created>1716568432681</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1716568432681</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change marking evaluation" />
-    <MESSAGE value="do not accept zero value for num_of_empty_cells" />
-    <MESSAGE value="rename to GeneticAlgorithmTests" />
-    <MESSAGE value="unify population number" />
-    <MESSAGE value="generic algorithm implementation" />
-    <MESSAGE value="rename to GeneticAlgorithm" />
-    <MESSAGE value="parametrize test_genetic_algorithm" />
-    <MESSAGE value="change default num_of_empty_cells range to (1, 5)" />
     <MESSAGE value="parametrize to manage many solutions" />
     <MESSAGE value="run_performance.py implementation" />
     <MESSAGE value="set typing for exact_algorithm" />
@@ -602,7 +609,15 @@
     <MESSAGE value="clean code" />
     <MESSAGE value="IDE config changes" />
     <MESSAGE value="run_performance.py with sharts" />
-    <option name="LAST_COMMIT_MESSAGE" value="run_performance.py with sharts" />
+    <MESSAGE value="remove unused writer" />
+    <MESSAGE value="set categories for average chart" />
+    <MESSAGE value="remove old code" />
+    <MESSAGE value="update example performance_results.xlsx" />
+    <MESSAGE value="IDE config" />
+    <MESSAGE value="parametrize number of solutions to import" />
+    <MESSAGE value="insert docstrings" />
+    <MESSAGE value="remove redundant defaults for opening file" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove redundant defaults for opening file" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -617,7 +632,7 @@
     <SUITE FILE_PATH="coverage/TAL_sudoku$good_solution_source.coverage" NAME="good_solution_source Coverage Results" MODIFIED="1716541825890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$interactive_sudoku.coverage" NAME="interactive_sudoku Coverage Results" MODIFIED="1716558427715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$good_solution_source__1_.coverage" NAME="good_solution_source (1) Coverage Results" MODIFIED="1716540296790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TAL_sudoku$run_performance.coverage" NAME="run_performance Coverage Results" MODIFIED="1716567716715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TAL_sudoku$run_performance.coverage" NAME="run_performance Coverage Results" MODIFIED="1716568443474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$test.coverage" NAME="test Coverage Results" MODIFIED="1716142096261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$.coverage" NAME=" Coverage Results" MODIFIED="1716541811573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
