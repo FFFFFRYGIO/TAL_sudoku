@@ -6,6 +6,8 @@ from source_manager import get_good_solution
 
 class SudokuTests(unittest.TestCase):
     def setUp(self):
+        """ setUp SudokuTests """
+
         self.good_solution = get_good_solution()
 
     def test_sudoku_good_solution_count_mistakes(self):

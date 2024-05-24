@@ -7,6 +7,8 @@ from source_manager import get_good_solution
 
 class ExactAlgorithmTests(unittest.TestCase):
     def setUp(self):
+        """ setUp ExactAlgorithmTests """
+
         self.good_solution = get_good_solution()
 
     def test_exact_algorithm(self):

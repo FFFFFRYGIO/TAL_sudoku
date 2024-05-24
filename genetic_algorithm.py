@@ -5,6 +5,8 @@ from Sudoku import Sudoku
 
 
 class GeneticAlgorithm:
+    """ ExactAlgorithm class to implement the exact algorithm """
+
     def __init__(self, sudoku_to_solve: Sudoku, population_number: int = 10):
         self.sudoku_to_solve = copy.deepcopy(sudoku_to_solve)
         self.population_number = population_number
@@ -71,6 +73,8 @@ class GeneticAlgorithm:
         return None
 
     def genetic_algorithm(self) -> Sudoku:
+        """ genetic algorithm implementation """
+
         # 1. Initial Population
         self.initial_population()
 

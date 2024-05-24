@@ -11,6 +11,8 @@ from source_manager import get_good_solution
 @ddt
 class GeneticAlgorithmTests(unittest.TestCase):
     def setUp(self):
+        """ setUp GeneticAlgorithmTests """
+
         self.good_solution = get_good_solution()
 
     @data(*product(range(1, 5), [5, 10, 20]))

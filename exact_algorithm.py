@@ -2,6 +2,8 @@ from Sudoku import Sudoku
 
 
 class ExactAlgorithm:
+    """ ExactAlgorithm class to implement the exact algorithm """
+
     def __init__(self, sudoku: Sudoku):
         self.sudoku = sudoku
         self.non_perm_cell_index = 0
@@ -12,6 +14,7 @@ class ExactAlgorithm:
             self.sudoku.board[i][j] = 1
 
     def exact_algorithm(self) -> Sudoku:
+        """ exact algorithm implementation """
 
         # 1. Fill with ones
         self.fill_sudoku_with_ones()

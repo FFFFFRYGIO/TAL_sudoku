@@ -12,6 +12,8 @@ from source_manager import get_solutions
 
 
 class PerformanceRunner:
+    """ PerformanceRunner class to run preconfigured performance calculations and save them with analysis to excel """
+
     def __init__(self, num_of_empty_cells_range, genetic_algorithm_population_numbers):
         self.num_of_empty_cells_range = num_of_empty_cells_range
         self.genetic_algorithm_population_numbers = genetic_algorithm_population_numbers
@@ -26,6 +28,8 @@ class PerformanceRunner:
 
     @staticmethod
     def run_exact_algorithm_performance(good_solution, num_of_empty_cells):
+        """ exact algorithm runner """
+
         print(f"Running ExactAlgorithm for n={num_of_empty_cells}")
         start_time = time.time()
 
@@ -44,6 +48,8 @@ class PerformanceRunner:
 
     @staticmethod
     def run_genetic_algorithm_performance(good_solution, num_of_empty_cells, population_number):
+        """ genetic algorithm runner with time measure """
+
         print(f"Running GeneticAlgorithm for p={population_number} and n={num_of_empty_cells}")
         start_time = time.time()
 
@@ -61,6 +67,8 @@ class PerformanceRunner:
         return elapsed_time
 
     def run_for_solution(self, good_solution):
+        """ exact and genetic algorithms runner for different num_of_empty_cells """
+
         for num_of_empty_cells in self.num_of_empty_cells_range:
             print(f"Running for n={num_of_empty_cells}")
 
@@ -76,6 +84,8 @@ class PerformanceRunner:
             print(f"Finished for n={num_of_empty_cells}")
 
     def main(self):
+        """ main performance runner for different good solutions """
+
         for i, good_solution in enumerate(self.good_solutions):
             print(f"Running for good_solution {i+1}")
             self.run_for_solution(good_solution)
