@@ -42,6 +42,8 @@ GOOD_SOLUTIONS = [
 
 
 def save_good_solution(solution: List[List[int]], file_name: str = 'good_solution.txt'):
+    """ save good solution to file """
+
     with open(os.path.join('good_solutions', file_name), 'w') as f:
         for row in solution:
             f.write("\t".join(str(i) for i in row))
@@ -49,6 +51,8 @@ def save_good_solution(solution: List[List[int]], file_name: str = 'good_solutio
 
 
 def save_solutions(solutions: List[List[List[int]]], file_names: List[str] = None) -> List[str]:
+    """ save number of good solutions to file """
+
     if not os.path.exists('good_solutions'):
         os.makedirs('good_solutions')
 
@@ -60,6 +64,8 @@ def save_solutions(solutions: List[List[List[int]]], file_names: List[str] = Non
 
 
 def get_good_solution(file_name: str = None) -> List[Tuple[int, int, int]]:
+    """ get good solution from file """
+
     if file_name is None:
         file_name = choice(os.listdir('good_solutions'))
 
@@ -74,6 +80,8 @@ def get_good_solution(file_name: str = None) -> List[Tuple[int, int, int]]:
 
 
 def get_solutions(num_of_solutions_to_use, solutions_file_list: List[str] = None) -> List[List[Tuple[int, int, int]]]:
+    """ get number of solutions from good solutions files """
+
     if not solutions_file_list:
         solutions_file_list = [f'good_solution_{i}' for i in range(1, len(GOOD_SOLUTIONS) + 1)]
 
@@ -84,6 +92,8 @@ def get_solutions(num_of_solutions_to_use, solutions_file_list: List[str] = None
 
 
 def get_problem(file_name: str) -> List[Tuple[int, int, int]]:
+    """ get problem from file """
+
     file_path = os.path.join('problems_source', file_name)
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"File {file_name} does not exist in the problems_source directory.")
