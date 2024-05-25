@@ -14,8 +14,9 @@ from source_manager import get_solutions
 class PerformanceRunner:
     """ PerformanceRunner class to run preconfigured performance calculations and save them with analysis to excel """
 
-    def __init__(self, num_of_solutions_to_use, num_of_empty_cells_range, genetic_algorithm_population_numbers,
-                 output_file_name):
+    def __init__(self, num_of_solutions_to_use, attempts_amount, num_of_empty_cells_range,
+                 genetic_algorithm_population_numbers, output_file_name):
+        self.attempts_amount = attempts_amount
         self.num_of_empty_cells_range = num_of_empty_cells_range
         self.genetic_algorithm_population_numbers = genetic_algorithm_population_numbers
 
@@ -203,10 +204,13 @@ class PerformanceRunner:
 
 
 if __name__ == '__main__':
+
     NUM_OF_SOLUTIONS_TO_USE = 3
+    ATTEMPTS_AMOUNT = 5
     GENETIC_ALGORYTHM_POPULATION_NUMBERS = [5, 10, 20]
     NUM_OF_EMPTY_CELLS_RANGE = range(3, 7)
     OUTPUT_FILE_NAME = 'performance_results.xlsx'
-    runner = PerformanceRunner(
-        NUM_OF_SOLUTIONS_TO_USE, NUM_OF_EMPTY_CELLS_RANGE, GENETIC_ALGORYTHM_POPULATION_NUMBERS, OUTPUT_FILE_NAME)
+
+    runner = PerformanceRunner(NUM_OF_SOLUTIONS_TO_USE, ATTEMPTS_AMOUNT, NUM_OF_EMPTY_CELLS_RANGE,
+                               GENETIC_ALGORYTHM_POPULATION_NUMBERS, OUTPUT_FILE_NAME)
     runner.main()
