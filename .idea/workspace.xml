@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="remove redundant defaults for opening file">
+    <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="ide config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performance_results/performance_results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/performance_results/performance_results.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_performance.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_performance.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,9 +158,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.source_manager" />
       <item itemvalue="Python.interactive_sudoku" />
       <item itemvalue="Python.run_performance" />
-      <item itemvalue="Python.source_manager" />
     </list>
     <recent_temporary>
       <list>
@@ -192,22 +193,7 @@
       <workItem from="1716466323169" duration="23660000" />
       <workItem from="1716536695611" duration="30240000" />
       <workItem from="1716576837122" duration="277000" />
-    </task>
-    <task id="LOCAL-00007" summary="fix incrementing values in board">
-      <option name="closed" value="true" />
-      <created>1716157108840</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1716157108840</updated>
-    </task>
-    <task id="LOCAL-00008" summary="cosmetics">
-      <option name="closed" value="true" />
-      <created>1716157123765</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1716157123765</updated>
+      <workItem from="1716578411519" duration="12123000" />
     </task>
     <task id="LOCAL-00009" summary="test returned sudoku in test_exact_algorithm">
       <option name="closed" value="true" />
@@ -585,14 +571,29 @@
       <option name="project" value="LOCAL" />
       <updated>1716568432681</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="clean code">
+      <option name="closed" value="true" />
+      <created>1716578452133</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1716578452134</updated>
+    </task>
+    <task id="LOCAL-00057" summary="ide config">
+      <option name="closed" value="true" />
+      <created>1716578467245</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1716578467245</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="parametrize to manage many solutions" />
     <MESSAGE value="run_performance.py implementation" />
     <MESSAGE value="set typing for exact_algorithm" />
     <MESSAGE value="set typing for GeneticAlgorithm" />
@@ -606,7 +607,6 @@
     <MESSAGE value="interactive sudoku with sudoku_problem.txt example" />
     <MESSAGE value="clean code changes" />
     <MESSAGE value="inserting dicstrings" />
-    <MESSAGE value="clean code" />
     <MESSAGE value="IDE config changes" />
     <MESSAGE value="run_performance.py with sharts" />
     <MESSAGE value="remove unused writer" />
@@ -617,7 +617,9 @@
     <MESSAGE value="parametrize number of solutions to import" />
     <MESSAGE value="insert docstrings" />
     <MESSAGE value="remove redundant defaults for opening file" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove redundant defaults for opening file" />
+    <MESSAGE value="clean code" />
+    <MESSAGE value="ide config" />
+    <option name="LAST_COMMIT_MESSAGE" value="ide config" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -632,7 +634,7 @@
     <SUITE FILE_PATH="coverage/TAL_sudoku$good_solution_source.coverage" NAME="good_solution_source Coverage Results" MODIFIED="1716541825890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$interactive_sudoku.coverage" NAME="interactive_sudoku Coverage Results" MODIFIED="1716558427715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$good_solution_source__1_.coverage" NAME="good_solution_source (1) Coverage Results" MODIFIED="1716540296790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TAL_sudoku$run_performance.coverage" NAME="run_performance Coverage Results" MODIFIED="1716568443474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TAL_sudoku$run_performance.coverage" NAME="run_performance Coverage Results" MODIFIED="1716594961894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$test.coverage" NAME="test Coverage Results" MODIFIED="1716142096261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TAL_sudoku$.coverage" NAME=" Coverage Results" MODIFIED="1716541811573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
