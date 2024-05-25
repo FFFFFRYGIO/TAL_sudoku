@@ -3,6 +3,7 @@ import time
 
 import openpyxl
 import pandas as pd
+from memory_profiler import memory_usage
 from openpyxl.chart import LineChart, Reference
 
 from Sudoku import get_random_sudoku
