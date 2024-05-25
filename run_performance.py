@@ -27,55 +27,80 @@ class PerformanceRunner:
         self.good_solutions = get_solutions(num_of_solutions_to_use)
 
         self.average_summary = {
-            solver: [] for solver in ['exact'] + [f'genetic_{p}' for p in self.genetic_algorithm_population_numbers]
+            solver: [] for solver in
+            ['exact_time'] +
+            ['exact_memory'] +
+            [f'genetic_{p}_time' for p in self.genetic_algorithm_population_numbers] +
+            [f'genetic_{p}_memory' for p in self.genetic_algorithm_population_numbers]
         }
 
         self.results = {}
         for n in self.num_of_empty_cells_range:
             self.results.update({f'index_{n}': []})
-            self.results.update({f'exact_{n}': []})
-            self.results.update({f'genetic_{p}_{n}': [] for p in self.genetic_algorithm_population_numbers})
+            self.results.update({f'exact_{n}_time': []})
+            self.results.update({f'exact_{n}_memory': []})
+            self.results.update({f'genetic_{p}_{n}_time': [] for p in self.genetic_algorithm_population_numbers})
+            self.results.update({f'genetic_{p}_{n}_memory': [] for p in self.genetic_algorithm_population_numbers})
 
     @staticmethod
     def run_exact_algorithm_performance(good_solution, num_of_empty_cells):
-        """ exact algorithm runner """
+        """ exact algorithm runner with time and memory measure """
 
         print(f"Running ExactAlgorithm for n={num_of_empty_cells}")
-        start_time = time.time()
 
-        sudoku = get_random_sudoku(num_of_empty_cells, good_solution)
-        exact_algorithm = ExactAlgorithm(sudoku)
-        result_sudoku = exact_algorithm.exact_algorithm()
+        def run_algorithm():
+            """ run  exact_algorithm """
+            sudoku = get_random_sudoku(num_of_empty_cells, good_solution)
+            exact_algorithm = ExactAlgorithm(sudoku)
 
-        end_time = time.time()
-        elapsed_time = end_time - start_time
+            start_time = time.time()
+
+            result = exact_algorithm.exact_algorithm()
+
+            end_time = time.time()
+
+            return result, end_time - start_time
+
+        memory_usage_info, run_result = memory_usage(run_algorithm, interval=0.1, max_usage=True, retval=True)
+
+        result_sudoku, elapsed_time = run_result
 
         if not result_sudoku.is_valid():
             raise ValueError("ExactAlgorithm: Sudoku not solved properly")
 
-        print(f"Finished ExactAlgorithm for n={num_of_empty_cells} with time {elapsed_time}")
-        return elapsed_time
+        print(f"Finished ExactAlgorithm for n={num_of_empty_cells} "
+              f"with time {elapsed_time} seconds and max memory usage {memory_usage_info} MiB")
+        return elapsed_time, memory_usage_info
 
     @staticmethod
     def run_genetic_algorithm_performance(good_solution, num_of_empty_cells, population_number):
-        """ genetic algorithm runner with time measure """
+        """ genetic algorithm runner with time and memory measure"""
 
         print(f"Running GeneticAlgorithm for p={population_number} and n={num_of_empty_cells}")
-        start_time = time.time()
 
-        sudoku = get_random_sudoku(num_of_empty_cells, good_solution)
-        genetic_algorithm = GeneticAlgorithm(sudoku, population_number=population_number)
-        result_sudoku = genetic_algorithm.genetic_algorithm()
+        def run_algorithm():
+            """ run  genetic_algorithm """
+            sudoku = get_random_sudoku(num_of_empty_cells, good_solution)
+            genetic_algorithm = GeneticAlgorithm(sudoku, population_number=population_number)
 
-        end_time = time.time()
-        elapsed_time = end_time - start_time
+            start_time = time.time()
+
+            result = genetic_algorithm.genetic_algorithm()
+
+            end_time = time.time()
+
+            return result, end_time - start_time
+
+        memory_usage_info, run_result = memory_usage(run_algorithm, interval=0.1, max_usage=True, retval=True)
+
+        result_sudoku, elapsed_time = run_result
 
         if not result_sudoku.is_valid():
             raise ValueError(f"GeneticAlgorithm {population_number}: Sudoku not solved properly")
 
-        print(
-            f"Finished GeneticAlgorithm for p={population_number} and n={num_of_empty_cells} with time {elapsed_time}")
-        return elapsed_time
+        print(f"Finished GeneticAlgorithm for p={population_number} and n={num_of_empty_cells} "
+              f"with time {elapsed_time} seconds and max memory usage {memory_usage_info} MiB")
+        return elapsed_time, memory_usage_info
 
     def run_for_solution(self, good_solution):
         """ exact and genetic algorithms runner for different num_of_empty_cells """
@@ -88,10 +113,11 @@ class PerformanceRunner:
                 self.results[f'exact_{num_of_empty_cells}'].append(exact_time)
 
             for population_number in self.genetic_algorithm_population_numbers:
-                for _ in range(10):
-                    genetic_time = self.run_genetic_algorithm_performance(
+                for _ in range(self.attempts_amount):
+                    genetic_time, genetic_memory = self.run_genetic_algorithm_performance(
                         good_solution, num_of_empty_cells, population_number)
-                    self.results[f'genetic_{population_number}_{num_of_empty_cells}'].append(genetic_time)
+                    self.results[f'genetic_{population_number}_{num_of_empty_cells}_time'].append(genetic_time)
+                    self.results[f'genetic_{population_number}_{num_of_empty_cells}_memory'].append(genetic_memory)
 
             print(f"Finished for n={num_of_empty_cells}")
 
