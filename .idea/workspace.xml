@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e031a8-a620-4619-8014-97f4afc149c5" name="Changes" comment="ide config">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sudoku.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performance_results/performance_results.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/performance_results/performance_results.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_performance.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_performance.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,47 +192,7 @@
       <workItem from="1716466323169" duration="23660000" />
       <workItem from="1716536695611" duration="30240000" />
       <workItem from="1716576837122" duration="277000" />
-      <workItem from="1716578411519" duration="12123000" />
-    </task>
-    <task id="LOCAL-00009" summary="test returned sudoku in test_exact_algorithm">
-      <option name="closed" value="true" />
-      <created>1716203291378</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1716203291378</updated>
-    </task>
-    <task id="LOCAL-00010" summary="cells verification">
-      <option name="closed" value="true" />
-      <created>1716208366453</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1716208366453</updated>
-    </task>
-    <task id="LOCAL-00011" summary="cell setter and getter">
-      <option name="closed" value="true" />
-      <created>1716208653012</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1716208653012</updated>
-    </task>
-    <task id="LOCAL-00012" summary="replace value reference to getter">
-      <option name="closed" value="true" />
-      <created>1716219906794</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1716219906794</updated>
-    </task>
-    <task id="LOCAL-00013" summary="refractor sudoku, optimize time">
-      <option name="closed" value="true" />
-      <created>1716471172116</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1716471172116</updated>
+      <workItem from="1716578411519" duration="12773000" />
     </task>
     <task id="LOCAL-00014" summary="use good solution">
       <option name="closed" value="true" />
@@ -587,16 +546,53 @@
       <option name="project" value="LOCAL" />
       <updated>1716578467245</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="add attempts_amount configuration">
+      <option name="closed" value="true" />
+      <created>1716595924430</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1716595924430</updated>
+    </task>
+    <task id="LOCAL-00059" summary="add memory usage measure">
+      <option name="closed" value="true" />
+      <created>1716596013301</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1716596013301</updated>
+    </task>
+    <task id="LOCAL-00060" summary="add memory usage measure">
+      <option name="closed" value="true" />
+      <created>1716596017243</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1716596017243</updated>
+    </task>
+    <task id="LOCAL-00061" summary="simplify time and memory charts creation">
+      <option name="closed" value="true" />
+      <created>1716596068812</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1716596068812</updated>
+    </task>
+    <task id="LOCAL-00062" summary="ide config">
+      <option name="closed" value="true" />
+      <created>1716596081353</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1716596081353</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="run_performance.py implementation" />
-    <MESSAGE value="set typing for exact_algorithm" />
-    <MESSAGE value="set typing for GeneticAlgorithm" />
     <MESSAGE value="move good_solution_source.py, set path for good_solutions txt files" />
     <MESSAGE value="remove files list for PerformanceRunner" />
     <MESSAGE value="PyCharm idea elements" />
@@ -618,6 +614,9 @@
     <MESSAGE value="insert docstrings" />
     <MESSAGE value="remove redundant defaults for opening file" />
     <MESSAGE value="clean code" />
+    <MESSAGE value="add attempts_amount configuration" />
+    <MESSAGE value="add memory usage measure" />
+    <MESSAGE value="simplify time and memory charts creation" />
     <MESSAGE value="ide config" />
     <option name="LAST_COMMIT_MESSAGE" value="ide config" />
   </component>
