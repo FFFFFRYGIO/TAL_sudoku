@@ -3,6 +3,8 @@ from typing import List, Tuple
 
 
 class Sudoku:
+    """ Sudoku class with board of solution validation """
+
     def __init__(self, init_cells: List[Tuple[int, int, int]]):
         self.board = [[0 for _ in range(9)] for _ in range(9)]
         self.non_perm_cells_list = [(i, j) for i in range(9) for j in range(9)]
@@ -16,14 +18,20 @@ class Sudoku:
         self.mark = None
 
     def mark_solution(self):
+        """ update mark attribute according to current board """
+
         if not self.is_solved():
             raise ValueError('Sudoku is not solved yet')
         self.mark = self.count_mistakes()
 
     def is_solved(self) -> bool:
+        """ check if whole board is filled with digits from 1 to 9 """
+
         return all(self.board[i][j] in range(1, 10) for i in range(9) for j in range(9))
 
     def is_valid(self) -> bool:
+        """ check if board is solved without returning the amount of errors """
+
         if not self.is_solved():
             raise ValueError('Sudoku is not solved yet')
         if self.__count_mistakes_in_rows(only_validation=True) == -1:
@@ -35,6 +43,8 @@ class Sudoku:
         return True
 
     def count_mistakes(self) -> int:
+        """ count number of mistakes in board for rows, cols and 3x3 squares """
+
         if not self.is_solved():
             raise ValueError('Sudoku is not solved yet')
         count_mistakes_rows = self.__count_mistakes_in_rows()
@@ -83,6 +93,8 @@ class Sudoku:
         return mistake_count
 
     def display(self):
+        """ print board in console """
+
         print("Sudoku:")
         for row in self.board:
             for value in row:
@@ -91,6 +103,8 @@ class Sudoku:
 
 
 def get_random_sudoku(num_of_empty_cells: int, good_solution) -> Sudoku:
+    """ get a sudoku board with some randomly deleted cells """
+
     min_possible_clues = 17
     if not num_of_empty_cells or num_of_empty_cells > 9 * 9 - min_possible_clues:
         raise ValueError(f"Wrong number of empty cells: {num_of_empty_cells}")
