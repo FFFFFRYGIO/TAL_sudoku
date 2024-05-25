@@ -109,9 +109,10 @@ class PerformanceRunner:
         for num_of_empty_cells in self.num_of_empty_cells_range:
             print(f"Running for n={num_of_empty_cells}")
 
-            for _ in range(10):
-                exact_time = self.run_exact_algorithm_performance(good_solution, num_of_empty_cells)
-                self.results[f'exact_{num_of_empty_cells}'].append(exact_time)
+            for _ in range(self.attempts_amount):
+                exact_time, exact_memory = self.run_exact_algorithm_performance(good_solution, num_of_empty_cells)
+                self.results[f'exact_{num_of_empty_cells}_time'].append(exact_time)
+                self.results[f'exact_{num_of_empty_cells}_memory'].append(exact_memory)
 
             for population_number in self.genetic_algorithm_population_numbers:
                 for _ in range(self.attempts_amount):
@@ -122,7 +123,7 @@ class PerformanceRunner:
 
             print(f"Finished for n={num_of_empty_cells}")
 
-    def save_time_results(self):
+    def save_time_memory_results(self):
         """ save time results from running solvers with different solutions or number of empty cells """
 
         df = pd.DataFrame.from_dict(self.results, orient='index').transpose()
@@ -135,37 +136,44 @@ class PerformanceRunner:
         with pd.ExcelWriter(self.output_file_path, engine='openpyxl') as writer:
             df.to_excel(writer, sheet_name="Performance Results")
 
-    def create_time_charts(self):
-        """ create charts for every number of empty cells to compare solvers performance """
+    def create_time_memory_charts(self):
+        """ create charts for every number of empty cells to compare solvers time or memory performance """
 
         wb = openpyxl.load_workbook(self.output_file_path)
         ws = wb.active
 
         column_titles = {cell.value: cell.column for cell in ws[1]}
 
-        for n in self.num_of_empty_cells_range:
-            chart = LineChart()
-            chart.title = f"Performance Comparison - {n} Empty Cells"
-            chart.style = 13
+        time_config = {'title_part': 'Time', 'col_postfix': 'time', 'chart_col_placing': 'A'}
+        memory_config = {'title_part': 'Memory Usage', 'col_postfix': 'memory', 'chart_col_placing': 'K'}
+        for config in [time_config, memory_config]:
 
-            exact_column = column_titles[f'exact_{n}']
-            exact_data = Reference(ws, min_col=exact_column, min_row=1, max_row=ws.max_row - 1)
-            chart.add_data(exact_data, titles_from_data=True)
+            chart_placement = 2
 
-            for p in self.genetic_algorithm_population_numbers:
-                genetic_column = column_titles[f'genetic_{p}_{n}']
-                genetic_data = Reference(ws, min_col=genetic_column, min_row=1, max_row=ws.max_row - 1)
-                chart.add_data(genetic_data, titles_from_data=True)
+            for n in self.num_of_empty_cells_range:
+                chart = LineChart()
+                chart.title = f"{config['title_part']} Performance Comparison - {n} Empty Cells"
+                chart.style = 13
 
-            chart.legend.position = 'r'
-            chart.x_axis.title = "Trials"
-            chart.y_axis.title = "Performance Score"
+                exact_column = column_titles[f'exact_{n}_{config['col_postfix']}']
+                exact_data = Reference(ws, min_col=exact_column, min_row=1, max_row=ws.max_row - 1)
+                chart.add_data(exact_data, titles_from_data=True)
 
-            ws.add_chart(chart, f"A{ws.max_row + 2}")
+                for p in self.genetic_algorithm_population_numbers:
+                    genetic_column = column_titles[f'genetic_{p}_{n}_{config['col_postfix']}']
+                    genetic_data = Reference(ws, min_col=genetic_column, min_row=1, max_row=ws.max_row - 1)
+                    chart.add_data(genetic_data, titles_from_data=True)
+
+                chart.legend.position = 'r'
+                chart.x_axis.title = "Trials"
+                chart.y_axis.title = f"{config['title_part']} Performance"
+
+                ws.add_chart(chart, f"{config['chart_col_placing']}{ws.max_row + chart_placement}")
+                chart_placement += 15
 
         wb.save(self.output_file_path)
 
-    def get_avg_time_results(self):
+    def get_avg_results(self):
         """ get average time results and save it in different sheet """
 
         wb = openpyxl.load_workbook(self.output_file_path)
@@ -175,8 +183,13 @@ class PerformanceRunner:
 
         for solver in self.average_summary:
             for n in self.num_of_empty_cells_range:
-                if f'{solver}_{n}' in column_titles:
-                    col = column_titles[f'{solver}_{n}']
+                solver_col = solver
+                if '_time' in solver:
+                    solver_col = solver_col.replace('_time', f'_{n}_time')
+                elif '_memory' in solver:
+                    solver_col = solver_col.replace('_memory', f'_{n}_memory')
+                if solver_col in column_titles:
+                    col = column_titles[solver_col]
                     self.average_summary[solver].append(ws.cell(row=ws.max_row, column=col).value)
 
         wb.save(self.output_file_path)
@@ -188,31 +201,35 @@ class PerformanceRunner:
         with pd.ExcelWriter(self.output_file_path, engine='openpyxl', mode='a') as writer:
             df_avg.to_excel(writer, sheet_name='Average Performance Comparison')
 
-    def create_avg_time_charts(self):
-        """ create charts for average times of solvers to compare their performance """
+    def create_avg_time_memory_chart(self):
+        """ create charts for average times or memory usages of solvers to compare their performance """
 
         avg_wb = openpyxl.load_workbook(self.output_file_path)
         avg_ws = avg_wb['Average Performance Comparison']
 
-        avg_chart = LineChart()
-        avg_chart.title = "Average Performance Comparison"
-        avg_chart.style = 13
-
         column_titles = {cell.value: cell.column for cell in avg_ws[1]}
 
-        for solver in self.average_summary:
-            exact_column = column_titles[solver]
-            exact_data = Reference(avg_ws, min_col=exact_column, min_row=1, max_row=avg_ws.max_row)
-            avg_chart.add_data(exact_data, titles_from_data=True)
+        time_config = {'title_part': 'Time', 'col_postfix': 'time', 'chart_col_placing': 'A'}
+        memory_config = {'title_part': 'Memory Usage', 'col_postfix': 'memory', 'chart_col_placing': 'K'}
+        for config in [time_config, memory_config]:
 
-        categories = Reference(avg_ws, min_col=1, min_row=2, max_row=avg_ws.max_row)
-        avg_chart.set_categories(categories)
+            avg_chart = LineChart()
+            avg_chart.title = f"Average {config['title_part']} Performance Comparison"
+            avg_chart.style = 13
 
-        avg_chart.legend.position = 'r'
-        avg_chart.x_axis.title = "Solver Type"
-        avg_chart.y_axis.title = "Average Performance Score"
+            for solver in [solver for solver in self.average_summary if f'_{config['col_postfix']}' in solver]:
+                exact_column = column_titles[solver]
+                exact_data = Reference(avg_ws, min_col=exact_column, min_row=1, max_row=avg_ws.max_row)
+                avg_chart.add_data(exact_data, titles_from_data=True)
 
-        avg_ws.add_chart(avg_chart, f"A{avg_ws.max_row + 2}")
+            categories = Reference(avg_ws, min_col=1, min_row=2, max_row=avg_ws.max_row)
+            avg_chart.set_categories(categories)
+
+            avg_chart.legend.position = 'r'
+            avg_chart.x_axis.title = "Number of empty cells"
+            avg_chart.y_axis.title = f"Average {config['title_part']} Performance"
+
+            avg_ws.add_chart(avg_chart, f"{config['chart_col_placing']}{avg_ws.max_row + 2}")
 
         avg_wb.save(os.path.join('performance_results', 'performance_results.xlsx'))
 
@@ -224,14 +241,13 @@ class PerformanceRunner:
             self.run_for_solution(good_solution)
             print(f"Finished for good_solution {i + 1}")
 
-        self.save_time_results()
-        self.create_time_charts()
-        self.get_avg_time_results()
-        self.create_avg_time_charts()
+        self.save_time_memory_results()
+        self.create_time_memory_charts()
+        self.get_avg_results()
+        self.create_avg_time_memory_chart()
 
 
 if __name__ == '__main__':
-
     NUM_OF_SOLUTIONS_TO_USE = 3
     ATTEMPTS_AMOUNT = 5
     GENETIC_ALGORYTHM_POPULATION_NUMBERS = [5, 10, 20]
