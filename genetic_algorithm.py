@@ -33,8 +33,7 @@ class GeneticAlgorithm:
         """ shorten population to max_population_number by removing those with bad mark """
 
         sorted_population = sorted(self.population, key=lambda sudoku: sudoku.mark)
-        trimmed_population = sorted_population[:self.population_number]
-        self.population = trimmed_population
+        self.population = sorted_population[:self.population_number]
 
     def crossover_population(self):
         """ create child solutions based on 2 currently existing solutions """
